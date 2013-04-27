@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<resources>  
+<color name="white">#ffffff</color>  
+<color name="unfocused">#ffffff</color>  
+<color name="pressed">#ffffff</color>  
+<color name="selected">#f6f5ec</color>  
+<color name="focused">#ffffff</color>  
+</resources>  

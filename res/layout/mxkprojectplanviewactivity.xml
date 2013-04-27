@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/mxk_activity_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/mXKMainWorkBencheActivityDiv"
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:background="@drawable/mxk_activity_header" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dip" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/app_name"
+                android:textColor="#FFFFFF"
+                android:textSize="18dip" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" >
+
+                <TextView
+                    android:id="@+id/mxkprojectplanviewusername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:text="dasdas"
+                    android:textSize="14dip" />
+
+                <ImageView
+                    android:id="@+id/mxkprojectplanviewuserimage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/updatework"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+     <View
+            android:layout_width="fill_parent"
+            android:layout_height="5dip"
+            android:background="#2a5caa" />
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dip"
+            android:orientation="horizontal"
+             android:background="@drawable/plane_white_background"
+            android:padding="5dip" >
+
+            <ImageView
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:background="@drawable/updatework"
+                android:contentDescription="@string/app_name" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="3dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mxkprojectplanviewplantime"
+                    android:textColor="#2a5caa"
+                    android:textSize="17dip" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mxkprojectplanviewplanfrom"
+                    android:textSize="13dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="5dip" >
+
+            <TextView
+                android:id="@+id/mxkprojectplanadaptarmessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#2a5caa"
+                android:textSize="12dip" />
+
+            <ImageView
+                android:id="@+id/mxkprojectplanviewplanimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/mxkprojectplanviewplancomments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11dip" />
+
+                    <TextView
+                        android:id="@+id/mxkprojectplanviewplanshare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11dip" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/mxkprojectplanadaptarinfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="总进度10%"
+                    android:textColor="#005831"
+                    android:textSize="11dip" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/mxkprojectviewplans"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

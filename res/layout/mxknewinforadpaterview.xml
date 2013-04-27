@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:padding="3dip" >
+
+        <ImageView
+            android:id="@+id/mxknewinforuseriamge"
+            android:layout_width="30dip"
+            android:layout_height="30dip" />
+
+        <View
+            android:layout_width="10dip"
+            android:layout_height="10dip" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/mxknewinforusername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#2a5caa" />
+
+            <TextView
+                android:id="@+id/mxknewinforplaninfor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11dip" />
+
+            <ImageView
+                android:id="@+id/mxknewinforplanimage"
+                android:layout_width="245dp"
+                android:layout_height="123dp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/mxknewinfortime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="11dip" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/mxknewinforshare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#005831"
+                        android:textSize="11dip" />
+
+                    <View
+                        android:layout_width="2dip"
+                        android:layout_height="1dip" />
+
+                    <TextView
+                        android:id="@+id/mxknewinforcommmet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#005831"
+                        android:textSize="11dip" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

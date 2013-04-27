@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+      <string name="hello">Hello World, TRMainViewActivity!</string>
+    <string name="app_name">模型Fan</string>
+    
+     <!-- TRLoginViewActivity -->
+    <string name="MXKLoginViewActivityLoginName">用户账号</string>
+    <string name="MXKLoginViewActivityPassWord">用户密码</string>
+    <string name="MXKLoginViewActivityUserName">用户昵称</string>
+    <string name="MXKLoginViewActivityLogin">登陆</string>
+    <string name="MXKLoginViewActivityReg">新建</string>
+    <string name="MXKLoginViewActivityBcak">返回</string>
+
+</resources>

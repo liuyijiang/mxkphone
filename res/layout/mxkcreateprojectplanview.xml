@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/mxk_activity_background"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/mXKMainWorkBencheActivityDiv"
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/mxk_activity_header" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dip" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/app_name"
+                android:textColor="#FFFFFF"
+                android:textSize="18dip" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" >
+
+                <TextView
+                    android:id="@+id/mxkprojectviewusername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="毛主席"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dip" />
+
+                <ImageView
+                    android:id="@+id/mxkprojectviewuserimage"
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mXKMainWorkBencheActivitylinear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mXKMainWorkBencheActivityDiv"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="30dip"
+                        android:layout_height="30dip"
+                        android:background="@drawable/imageget"
+                        android:contentDescription="@string/app_name" />
+
+                    <TextView
+                        android:id="@+id/mxkprojectviewusername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="选择图片"
+                        android:textColor="#2a5caa"
+                        android:textSize="18dip" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/b2"
+                    android:contentDescription="@string/app_name" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预计已完成进度(%)"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <EditText
+                android:id="@+id/mXKWorkPlaningAddViewActivityPlaning"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="进度描述"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <EditText
+                android:id="@+id/mXKWorkPlaningAddViewActivityDescrible"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxWidth="180dip"
+                android:minWidth="10.0dip"
+                android:scrollHorizontally="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dip" >
+
+        <Button
+            android:id="@+id/MXKLoginViewActivityLoginButton"
+            android:layout_width="fill_parent"
+            android:layout_height="35dip"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/mxk_activity_header"
+            android:text="发布进度"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+</RelativeLayout>

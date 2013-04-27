@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/mxk_activity_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:background="@drawable/mxk_activity_header" ><RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dip" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/app_name"
+                android:textColor="#FFFFFF"
+                android:textSize="18dip" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" >
+
+                <TextView
+                    android:id="@+id/mxkvistirseeplanviewusername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="毛主席"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dip" />
+
+                <ImageView
+                    android:id="@+id/mxkvistirseeplanviewuserimage"
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dip"
+         android:background="@drawable/plane_white_background"
+        android:padding="5dip" > 
+
+        <ImageView
+            android:id="@+id/mxkmainviewuserimage"
+            android:layout_width="32dip"
+            android:layout_height="32dip"
+            android:contentDescription="@string/app_name" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="3dip" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="寂寞4娇俏\希佩尔还具上讲"
+               android:textColor="#2a5caa"
+                android:textSize="16dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="faf分风分色分色分色"
+                android:textSize="12dip" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                 >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="2012-12-11 23:12:12"
+                     android:textSize="12dip" />
+
+                <TextView
+                    android:id="@+id/mxkvistirseeplanviewaddcoment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="评论进度"
+                    android:textColor="#009ad6"
+                     android:textSize="12dip" />
+            </RelativeLayout>
+        </LinearLayout>
+        
+    </LinearLayout>
+  
+    
+      <LinearLayout
+        android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+          android:layout_margin="5dip"
+          android:orientation="vertical"
+        android:padding="5dip" > 
+        
+         <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="评论d打我的打我分色分色福尔分色分色分色分色发色粉色分色分色分色分色分色分色福尔分色分色分色分色"
+                    android:textSize="10dip" />
+         
+
+           <ImageView
+               android:id="@+id/mxknewinforplanimage"
+               android:layout_width="wrap_content"
+               android:layout_height="150dip"
+               />
+           
+           
+           <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip" >
+
+               
+            <TextView
+                android:id="@+id/mxkvistirseeplanviewcomment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="毛主席"
+                android:textSize="10dip" />
+               
+            <TextView
+                android:id="@+id/mxkvistirseeplanviewshare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/mxkvistirseeplanviewcomment"
+                android:text="  毛主席ddd"
+                android:textSize="10dip" />
+
+            <TextView
+                android:id="@+id/mxkvistirseeplanviewplan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/app_name"
+                android:textSize="10dip" />
+        </RelativeLayout>
+           
+         
+        </LinearLayout>
+    
+      <ListView
+        android:id="@+id/mxkvistirseeplanviewcomment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
