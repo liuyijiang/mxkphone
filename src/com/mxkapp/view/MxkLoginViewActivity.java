@@ -40,7 +40,7 @@ public class MxkLoginViewActivity extends Activity {
 	}
 
 	private void checkiUser() {
-		uvo = Application.CURRENT_USER;
+		uvo = (UserVO) Application.key.get(Application.CURRENT_USER);
 		if(uvo != null){
 			service.navToMainView();
 		}
@@ -110,10 +110,10 @@ public class MxkLoginViewActivity extends Activity {
 	
 	private Dialog buildDialogForLoginWait() {
 		 progressDialog = new ProgressDialog(context);  
-		 progressDialog.setTitle("模型控");  
+		 progressDialog.setTitle("模型Fan");  
 		 progressDialog.setMessage("正在登陆..");  
-		 progressDialog.setIndeterminate(false);  
-		 progressDialog.setCancelable(false);  
+		 progressDialog.setIndeterminate(true);  
+		 progressDialog.setCancelable(true);  
          return progressDialog;  
 	}
 

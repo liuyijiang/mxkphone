@@ -41,6 +41,7 @@ public class MxkVistirService extends MxkService {
 				}
 				tempHashMap.put("userimage", imageurl+vo.getUserimage());
 				tempHashMap.put("planimage", imageurl+vo.getImageUrl());
+				tempHashMap.put("UserProjectPlanVO", vo);
   			    apdata.add(tempHashMap);
 			}
 			
@@ -51,14 +52,19 @@ public class MxkVistirService extends MxkService {
 	
 	
 	
-	public void navToMxkVisitrSeePlanView(String planid){
+	public void navToMxkVisitrSeePlanView(UserProjectPlanVO vo){
 		Intent intent = new Intent();
+		intent.putExtra("UserProjectPlanVO", vo); //´«ÖÁ
 		intent.setClass(context,MxkVisitrSeePlanViewActivity.class);
 		context.startActivity(intent);
 	}
 
-	public void navToMxkAddComentView(String planid){
+	public void navToMxkAddComentView(String planid,String username,String projectid, String ownerid){
 		Intent intent = new Intent();
+		intent.putExtra("planid", planid);
+		intent.putExtra("username", username);
+		intent.putExtra("projectid", projectid);
+		intent.putExtra("ownerid", ownerid);
 		intent.setClass(context,MxkAddComentViewActivity.class);
 		context.startActivity(intent);
 	}

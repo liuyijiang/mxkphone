@@ -34,14 +34,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#FFFFFF"
-                    android:text="dasdas"
                     android:textSize="14dip" />
 
                 <ImageView
                     android:id="@+id/mxkprojectplanviewuserimage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/updatework"
+                     android:layout_width="30dip"
+                    android:layout_height="30dip"
                     android:contentDescription="@string/app_name" />
             </LinearLayout>
         </RelativeLayout>
@@ -145,7 +143,7 @@
         </LinearLayout>
 
         <ListView
-            android:id="@+id/mxkprojectviewplans"
+            android:id="@+id/mxkprojectviewplancomments"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

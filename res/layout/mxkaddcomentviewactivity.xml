@@ -35,7 +35,6 @@
                     android:id="@+id/mxkvistirseeplanviewusername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="毛主席"
                     android:textColor="#FFFFFF"
                     android:textSize="18dip" />
 
@@ -57,7 +56,7 @@
         android:orientation="vertical" >
 
         <EditText
-            android:id="@+id/mXKCreateSummaryActivityDescrible"
+            android:id="@+id/mxkaddcomentmessage"
             android:layout_width="fill_parent"
             android:layout_height="420dp"
             android:gravity="top|left"
@@ -78,18 +77,17 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/mXKLoginActivityLogin"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="分享" />
+<!--             <Button -->
+<!--                 android:id="@+id/mxkaddcomentviewshare" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_weight="1" -->
+<!--                 android:text="分享" /> -->
 
             <Button
-                android:id="@+id/mXKLoginActivityCreate"
+                android:id="@+id/mxkaddcomentviewadd"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="评论" />
         </LinearLayout>
     </RelativeLayout>

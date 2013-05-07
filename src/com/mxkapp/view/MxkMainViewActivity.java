@@ -1,5 +1,6 @@
 package com.mxkapp.view;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
@@ -23,6 +25,7 @@ import com.mxkapp.common.adapter.MXKProjectAdapter;
 import com.mxkapp.common.application.Application;
 import com.mxkapp.dao.project.MxkProjectService;
 import com.mxkapp.dao.user.MxkUserSerive;
+import com.mxkapp.vo.UserProjectVO;
 import com.mxkapp.vo.UserVO;
 
 public class MxkMainViewActivity extends Activity{
@@ -35,7 +38,7 @@ public class MxkMainViewActivity extends Activity{
 	private Context context = this;
 	
 	private ImageView imageview;
-	private TextView myguanzhu,username;//我的关注 
+	private TextView myguanzhu,mylog,username;//我的关注 
 	private UserVO uvo;
 	
 	private TextView loginOut;
@@ -58,6 +61,7 @@ public class MxkMainViewActivity extends Activity{
 		service.setContext(this);
 		initializeComponent();
 		initShowData();
+		createFileMkdir();
 	}
 	
 	//异步加载数据
@@ -77,10 +81,9 @@ public class MxkMainViewActivity extends Activity{
 
 		    			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 		    					long arg3) {
-		    				if(Application.USER_PROJECT_LIST != null && !Application.USER_PROJECT_LIST.isEmpty()){
-		    					  Application.CURRENT_PROJECT = Application.USER_PROJECT_LIST.get(arg2);
-		    		    		  projectService.navProjectView();
-		    				}
+		    				
+		    				    Application.key.put(Application.CURRENT_PROJECT, (UserProjectVO)adapterData.get(arg2).get("project"));
+		    		    		projectService.navProjectView();
 		     			}
 
 		    		});
@@ -95,7 +98,7 @@ public class MxkMainViewActivity extends Activity{
 		new Thread(new Runnable() {
 
 			public void run() {
-				uvo = Application.CURRENT_USER;
+				uvo = (UserVO) Application.key.get(Application.CURRENT_USER) ;
 				if(uvo != null){
 					adapterData = projectService.findUserProjects(uvo.getId());
 				}
@@ -109,6 +112,18 @@ public class MxkMainViewActivity extends Activity{
 		
 		username = (TextView) this.findViewById(R.id.mxkmainviewusername);
 		imageview = (ImageView) this.findViewById(R.id.mxkmainviewuserimage);
+		
+		
+		mylog = (TextView) this.findViewById(R.id.mxkmainviewmylog);
+		mylog.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				projectService.navMxkProjectLogView();
+			}
+
+		});
+		
+		
 		myguanzhu = (TextView) this.findViewById(R.id.mxkmainviewmyguanzhu);
 		myguanzhu.setOnClickListener(new OnClickListener() {
 
@@ -158,4 +173,10 @@ public class MxkMainViewActivity extends Activity{
         return progressDialog;  
     }
 	
+    private void createFileMkdir(){
+		File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"//mxk//");
+		if (!file.exists())
+		file.mkdir();
+	}
+    
 }

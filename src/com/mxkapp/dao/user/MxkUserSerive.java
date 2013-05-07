@@ -25,16 +25,15 @@ public class MxkUserSerive extends MxkService {
 	    UserVO userVO = (UserVO) MxkHttpPost.getUniqueData("/login", UserVO.class, formParams);
 	    if(userVO != null && userVO.getId() != null){
 	    	userVO.setImageBitMap(getBitmapFromUrl(userVO.getImage()));
-	    	Application.CURRENT_USER = userVO;
+	    	Application.key.put(Application.CURRENT_USER, userVO);
 	    	success = true;
 	    }
 		return success;
 	}
 	
 	public void loginOut(){
-		Application.CURRENT_PROJECT = null;
-		Application.CURRENT_USER = null;
-		Application.USER_PROJECT_LIST = null;
+		Application.key.put(Application.CURRENT_PROJECT, null);
+		Application.key.put(Application.CURRENT_USER, null);
 		Intent intent = new Intent();
 		intent.setClass(context,MxkLoginViewActivity.class);
 		context.startActivity(intent);

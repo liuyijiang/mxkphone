@@ -5,7 +5,10 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.mxkapp.view.MxkShowBigImageViewActivity;
+
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
@@ -23,6 +26,13 @@ public class MxkService {
 		this.context = context;
 	}
 
+	public void navShowBigImage(String iamgeurl){
+		Intent intent = new Intent();
+		intent.putExtra("iamgeurl", iamgeurl); //´«ÖÁ
+		intent.setClass(context,MxkShowBigImageViewActivity.class);
+		context.startActivity(intent);
+	}
+	
 	public Bitmap getBitmapFromUrl(String imgUrl) {
 		URL url;
 		Bitmap bitmap = null;

@@ -1,6 +1,5 @@
 package com.mxkapp.view;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -20,10 +20,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.mxkapp.common.adapter.MXKProjectPlanAdpater;
 import com.mxkapp.common.adapter.MXKShowNewInforAdapter;
 import com.mxkapp.common.application.Application;
+import com.mxkapp.dao.project.MxkProjectService;
 import com.mxkapp.dao.vister.MxkVistirService;
+import com.mxkapp.vo.UserProjectPlanVO;
 import com.mxkapp.vo.UserVO;
 
 /**
@@ -44,7 +45,7 @@ public class MxkShowNewInforViewActivity extends Activity {
 	private List<HashMap<String, Object>> adapterData = null;
 	private Context context = this;
 
-	private TextView myproject;//我的工程 
+	private TextView myproject,loginOut,mylog;//我的工程 
 	
 	private ImageView imageview;
 	private TextView username;//
@@ -52,6 +53,7 @@ public class MxkShowNewInforViewActivity extends Activity {
 	private UserVO uvo;
 	private ProgressDialog progressDialog;
 	private MxkVistirService mxkVistirService;
+	private MxkProjectService projectService;
 	private Button addmore;
 	private int currentPage;
 	private MXKShowNewInforAdapter functionAdapter;
@@ -85,12 +87,14 @@ public class MxkShowNewInforViewActivity extends Activity {
 	private void init() {
 		mxkVistirService = new MxkVistirService();
 		mxkVistirService.setContext(this);
+		projectService = new MxkProjectService();
+		projectService.setContext(this);
 		initializeComponent();
 		initData();
 	}
 	
 	private void initData() {
-		uvo = Application.CURRENT_USER;
+		uvo = (UserVO) Application.key.get(Application.CURRENT_USER);
 		if(uvo != null){
 			username.setText(uvo.getName());
 			imageview.setImageBitmap(uvo.getImageBitMap());
@@ -99,7 +103,6 @@ public class MxkShowNewInforViewActivity extends Activity {
 		new Thread(new Runnable() {
            
 			public void run() {
-				uvo = Application.CURRENT_USER;
 				if(uvo != null){
 					currentPage = 1;
 					adapterData = mxkVistirService.findNewInforPlans(adapterData,uvo.getId(),currentPage);
@@ -114,6 +117,37 @@ public class MxkShowNewInforViewActivity extends Activity {
 	
 	
 	private void initializeComponent() {
+		
+		myproject = (TextView) this.findViewById(R.id.mxkmainviewmyguanzhu);
+		myproject.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				projectService.navToMainView();
+			}
+
+		});
+		
+		
+		mylog = (TextView) this.findViewById(R.id.mxkmainviewmylog);
+		mylog.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				projectService.navMxkProjectLogView();
+			}
+
+		});
+		
+		
+		loginOut = (TextView) this.findViewById(R.id.mxkmainviewmylogout);
+		loginOut.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				projectService.loginOut();
+			}
+
+		});
+		
+		
 		username = (TextView) this.findViewById(R.id.mxkshownewinforviewusername);
 		imageview = (ImageView) this.findViewById(R.id.mxkshownewinforviewuserimage);
 		listView = (ListView) this.findViewById(R.id.mxknewinforview);
@@ -121,7 +155,8 @@ public class MxkShowNewInforViewActivity extends Activity {
 
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				mxkVistirService.navToMxkVisitrSeePlanView("s");
+				UserProjectPlanVO vo = (UserProjectPlanVO)adapterData.get(arg2).get("UserProjectPlanVO");
+				mxkVistirService.navToMxkVisitrSeePlanView(vo);
 			}
 
 		});

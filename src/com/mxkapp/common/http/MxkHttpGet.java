@@ -19,8 +19,8 @@ import com.mxkapp.common.util.MxkJsonUtil;
 public class MxkHttpGet {
    
 	private static final String ENCODE = "UTF-8";
-	private static final String HOST = "http://192.168.1.100:8080/mxkapp/";
-	
+	//private static final String HOST = "http://192.168.1.100:8080/mxkapp/";
+	private static final String HOST = "http://www.waileecn.com/mxkapp/";
 	public static <T> T getUniqueData(String action, Class<T> beanClass){
 		HttpClient client = new DefaultHttpClient();
         HttpGet get = new HttpGet(HOST+action);

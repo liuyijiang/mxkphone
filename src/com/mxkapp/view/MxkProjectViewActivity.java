@@ -70,12 +70,12 @@ public class MxkProjectViewActivity extends Activity {
 	} 
 
 	private void initData() {
-		uvo = Application.CURRENT_USER;
+		uvo = (UserVO) Application.key.get(Application.CURRENT_USER);
 		if(uvo != null){
 			username.setText(uvo.getName());
 			imageview.setImageBitmap(uvo.getImageBitMap());
 		}
-		pvo = Application.CURRENT_PROJECT;
+		pvo  = (UserProjectVO) Application.key.get(Application.CURRENT_PROJECT);
 		if(pvo != null){
 			projectstuts.setText("进度数量："+pvo.getPlans()+" | "+"总进度："+pvo.getProgress() + "%");
 			projetcname.setText(pvo.getName()+"( "+pvo.getType() + " )");
@@ -86,7 +86,6 @@ public class MxkProjectViewActivity extends Activity {
 		new Thread(new Runnable() {
 
 			public void run() {
-				uvo = Application.CURRENT_USER;
 				if(uvo != null){
 					currentPage = 1;
 					adapterData = planservcie.findUserProjectPlans(adapterData,pvo.getId(),currentPage);
@@ -110,11 +109,11 @@ public class MxkProjectViewActivity extends Activity {
         			functionAdapter = new MXKProjectPlanAdpater(
         					context, adapterData);
         			listView.setAdapter(functionAdapter);
-        			currentPage = currentPage + 1;
         		}
         	} else if( action == RE_LOAD_DATA) {
         		functionAdapter.notifyDataSetChanged();
         	}
+        	currentPage = currentPage + 1;
         	progressDialog.dismiss();
         }; 
 	};  
@@ -156,6 +155,7 @@ public class MxkProjectViewActivity extends Activity {
 				showDialog(SHOW_LOGIN_WAIT);
 				new Thread( new Runnable() {     
 					public void run() {  
+						
 						adapterData = planservcie.findUserProjectPlans(adapterData,pvo.getId(),currentPage);
 				    	Message message = new Message();
 				    	message.what = RE_LOAD_DATA;
